@@ -1,0 +1,25 @@
+spring:
+  application:
+    ###服务的名称
+    name: meitemayikt-distribute
+  datasource:
+    url: jdbc:mysql://localhost:3306/distribute_order?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        ###nacos注册地址
+        server-addr: 127.0.0.1:8848
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+server:
+  port: 8030
+
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8070
+  logger:
+    enabled: true
